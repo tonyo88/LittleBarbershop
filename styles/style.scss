@@ -1,0 +1,2193 @@
+//Main colors
+$main-color: #fff;
+$text-color: #000;
+$link-color: $main-color;
+$hover-link-color: #f2ab27;
+$title-color: #323e40;
+$background-color-menu: $title-color;
+$background-color: $text-color;
+$contact-background-color: linear-gradient(to right, #cfcfcf, #d3c4a5);
+$schedule-background-color: rgba(0, 9, 9, 0.5);
+$barbers-background-color: #708090;
+$social-background: #262626;
+
+//Breakpoints
+$breakpoint-browser: 1280px;
+$breakpoint-iPad-Pro: 1024px;
+$breakpoint-middle-large: 960px;
+$breakpoint-iPad: 768px;
+$breakpoint-middle-small: 540px;
+$breakpoint-phone: 414px;
+$wrapper-breakpoint: 1050px;
+
+//Mixins
+
+@mixin background-position() {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@function grid-columns($column-size) {
+  @return repeat($column-size, 1fr);
+}
+
+@mixin grid-system($column-size, $gap-size) {
+  display: grid;
+  grid-template-columns: grid-columns($column-size);
+  grid-row: auto;
+  grid-gap: $gap-size;
+}
+
+@mixin booking-hover() {
+  background-position: 0 0;
+  background-image: linear-gradient(to left,
+      transparent,
+      transparent 50%,
+      orange 50%,
+      rgba(255, 275, 0, 0.3));
+}
+
+@mixin placeholder-color($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  ::-moz-placeholder {
+    color: $color;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+  }
+
+  :-moz-placeholder {
+    color: $color;
+  }
+}
+
+@mixin contact-hover-btn() {
+  background-image: linear-gradient(to left,
+      transparent,
+      transparent 50%,
+      #717272 50%,
+      #4e5050);
+  background-position: 0 0;
+  color: $link-color;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $wrapper-breakpoint;
+  height: auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+body {
+  font-family: "oxygen", sans-serif;
+  color: $text-color;
+
+  a,
+  i {
+    color: $link-color;
+  }
+
+  //Header
+
+  header {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+
+    //Navigation
+
+    #navigation {
+      width: 100%;
+      height: 110px;
+      margin: 0 auto;
+      position: fixed;
+      z-index: 5;
+      background: rgba(0, 0, 0, 0.5);
+
+      //Fixed Nav
+
+      &.fixed-nav {
+        height: 80px;
+        background-color: $background-color-menu;
+
+        .main-menu {
+          line-height: 80px;
+
+          #menu {
+            .logo-middle {
+              width: 70px;
+              height: 70px;
+            }
+
+            li {
+              a {
+                font-size: 0.89rem;
+              }
+            }
+          }
+        }
+      }
+
+      //Toggle Btn Mobile Menu
+
+      #toggle-btn {
+        display: none;
+        float: right;
+        width: 25px;
+        margin: 20px 0;
+        cursor: pointer;
+        z-index: 5;
+
+        span {
+          display: block;
+          width: 100%;
+          height: 3px;
+          background-color: $link-color;
+          margin: 5px 0;
+          transition: all 300ms ease-in-out;
+
+          &.active-toggle-btn:nth-child(1) {
+            transform-origin: left;
+            transform: rotate(42deg) translateY(0.1px);
+          }
+
+          &.active-toggle-btn:nth-child(2) {
+            opacity: 0;
+          }
+
+          &.active-toggle-btn:nth-child(3) {
+            transform-origin: left;
+            transform: rotate(-42deg) translateY(0.1px);
+          }
+        }
+      }
+
+      //Logo Main Nav
+
+      .logo-name {
+        display: none;
+        float: left;
+        line-height: 70px;
+        position: fixed;
+
+        &.hidden {
+          display: none;
+        }
+
+        a {
+          font-size: 1.8rem;
+          font-family: "Spicy Rice", cursive;
+          text-decoration: none;
+          color: $hover-link-color;
+        }
+      }
+
+      //Main Menu
+
+      .main-menu {
+        width: 100%;
+        line-height: 110px;
+        margin: 0 auto;
+
+        #menu {
+          list-style-type: none;
+          text-align: center;
+
+          //Mobile Logo
+
+          .logo-mobile {
+            display: none;
+            border-bottom: none;
+
+            a {
+              .box-mobile-logo {
+                width: 140px;
+                margin: 0 auto;
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          //Main Menu Middle Logo
+          .logo-middle {
+            width: 100px;
+            height: 100px;
+            margin: 0 20px;
+
+            a {
+              text-decoration: none;
+
+              img {
+                width: 100%;
+                vertical-align: middle;
+              }
+            }
+          }
+
+          //Mobile Booking Btn
+
+          .mobile-booking-button {
+            display: none;
+            border-bottom: none;
+
+            a {
+              padding: 1em 2em;
+              font-size: 0.9rem;
+              font-weight: 400;
+              border: 1px solid $hover-link-color;
+              color: $link-color;
+            }
+          }
+
+          //Mobile Social
+
+          .mobile-social {
+            display: none;
+            border-bottom: none;
+
+            .mobile-social-box {
+              width: 100%;
+
+              ul {
+                list-style-type: none;
+                text-align: center;
+                top: 40px;
+
+                li {
+                  display: inline;
+                  padding: 0 20px;
+                  border-bottom: none;
+
+                  a {
+                    text-decoration: none;
+                    font-size: 1.4em;
+
+                    i {
+                      transition: 0.5s;
+
+                      &:hover {
+                        color: $hover-link-color;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .home-main-menu {
+            margin-right: 50px;
+          }
+
+          .contact-main-menu {
+            margin-left: 50px;
+          }
+
+          li {
+            display: inline-block;
+
+            a {
+              text-decoration: none;
+              font-size: 1em;
+              font-weight: 500;
+              letter-spacing: 1.2px;
+              transition: 0.5s;
+              font-family: "Fredericka the Great", cursive;
+              text-transform: uppercase;
+
+              &:hover {
+                color: $hover-link-color;
+                font-weight: 800;
+              }
+
+            }
+
+            //Active Cureent Link / Section
+
+            &.active a {
+              color: $hover-link-color;
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+
+    //Slider
+
+    .container-slider {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500%;
+        animation: sliders-animation 20s linear infinite;
+
+        .slide {
+          width: 20%;
+          height: 100vh;
+          float: left;
+        }
+
+        .slide1 {
+          background-image: url("../assets/images/header/sliders/header1.jpg");
+          @include background-position();
+          background-attachment: fixed;
+        }
+
+        .slide2 {
+          background-image: url("../assets/images/header/sliders/header2.jpg");
+          @include background-position();
+          background-attachment: fixed;
+        }
+
+        .slide3 {
+          background-image: url("../assets/images/header/sliders/header3.jpg");
+          @include background-position();
+          background-attachment: fixed;
+        }
+
+        .slide4 {
+          background-image: url("../assets/images/header/sliders/header4.jpg");
+          @include background-position();
+          background-attachment: fixed;
+        }
+
+        .slide5 {
+          background-image: url("../assets/images/header/sliders/header1.jpg");
+          @include background-position();
+          background-attachment: fixed;
+        }
+      }
+
+      //Header Booking Btn
+
+      .booking {
+        height: 100%;
+        width: 100%;
+        display: table;
+        position: absolute;
+        animation-duration: 1.5s;
+
+        .booking-btn-box {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+
+          a {
+            text-decoration: none;
+            font-size: 1.4em;
+            padding: 12px 20px;
+            font-weight: 400;
+            background-color: rgba(255, 127, 80, 0.5);
+            background-position: 100% 0;
+            background-size: 200% 100%;
+            transition: all 0.2s ease-in;
+            animation-duration: 1.5s;
+            animation-delay: 0.8s;
+
+            &:hover {
+              @include booking-hover();
+              border: 2px solid $link-color;
+              font-size: 1.1em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Main
+
+  main {
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+    width: 100%;
+
+    // Section Titles
+
+    .about,
+    .gallery,
+    .contact,
+    .booking-section {
+      padding: 5em 0 0;
+
+      h1 {
+        text-align: center;
+        padding-bottom: 3em;
+        font-size: 30px;
+        color: $title-color;
+        font-family: "Notable", sans-serif;
+
+        span {
+          padding-bottom: 10px;
+          border-bottom: 2px solid $hover-link-color;
+          line-height: 48px;
+        }
+      }
+    }
+
+    //About Section
+
+    .about {
+      padding-bottom: 2em;
+
+      .about-container {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        @include grid-system(2, 0);
+
+        .store-image {
+          width: 500px;
+          height: 100%;
+          margin: 0 auto;
+          background-image: url("../assets/images/main/about/about-image.png");
+          @include background-position();
+        }
+
+        .info {
+          padding: 35px;
+
+          h2 {
+            text-align: center;
+            font-family: "Lobster", cursive;
+            color: $title-color;
+            font-size: 2.5rem;
+
+            span {
+              padding-bottom: 5px;
+              border-bottom: 2px solid $hover-link-color;
+              line-height: 45px;
+            }
+          }
+
+          p {
+            font-size: 0.8rem;
+            padding: 10px 0;
+            font-family: "Pacifico", cursive;
+          }
+        }
+      }
+    }
+
+    //Gallery Section
+
+    .gallery {
+      background-image: url("../assets/images/main/gallery/gallery-bg.jpg");
+      @include background-position();
+      background-attachment: fixed;
+
+      .grid {
+        width: 100%;
+        padding-bottom: 50px;
+        margin: 0 auto;
+        height: auto;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+        grid-auto-rows: minmax(200px, 1fr);
+
+        .one {
+          grid-row: 1 / 3;
+        }
+
+        .two {
+          grid-column: 2 / 4;
+          grid-row: 1 / 3;
+        }
+
+        .four {
+          grid-row: 3 / 5;
+          grid-column: 2 / 4;
+        }
+
+        .six {
+          grid-row: 5 / 7;
+        }
+
+        .seven {
+          grid-row: 2 / 4;
+        }
+
+        .eight {
+          grid-column: 1 / 3;
+          grid-row: 5 / 7;
+        }
+
+        .nine {
+          grid-column: 1 / 3;
+          grid-row: 5 / 7;
+        }
+
+        .ten {
+          grid-row: 5 / 7;
+        }
+
+        .eleven {
+          grid-row: 5 / 7;
+        }
+
+        .twelve {
+          grid-row: 5 / 7;
+        }
+
+        a {
+          .image {
+            width: 100%;
+            height: 100%;
+            border-radius: 2%;
+            @include background-position();
+            filter: grayscale(80%) contrast(60%);
+            transition: 0.5s;
+
+            &:hover {
+              filter: grayscale(0);
+              transform: (1.02, 1.02);
+              -webkit-transform: (1.02, 1.02);
+              transform: scale(1.02, 1.02);
+            }
+          }
+
+          .image-one {
+            background-image: url("../assets/images/main/gallery/image1.jpg");
+          }
+
+          .image-two {
+            background-image: url("../assets/images/main/gallery/image2.jpg");
+          }
+
+          .image-three {
+            background-image: url("../assets/images/main/gallery/image3.jpg");
+          }
+
+          .image-four {
+            background-image: url("../assets/images/main/gallery/image4.jpg");
+          }
+
+          .image-five {
+            background-image: url("../assets/images/main/gallery/image5.jpg");
+          }
+
+          .image-six {
+            background-image: url("../assets/images/main/gallery/image6.jpg");
+          }
+
+          .image-seven {
+            background-image: url("../assets/images/main/gallery/image7.jpg");
+          }
+
+          .image-eight {
+            background-image: url("../assets/images/main/gallery/image8.jpg");
+          }
+
+          .image-nine {
+            background-image: url("../assets/images/main/gallery/image9.jpg");
+          }
+
+          .image-ten {
+            background-image: url("../assets/images/main/gallery/image10.jpg");
+          }
+
+          .image-eleven {
+            background-image: url("../assets/images/main/gallery/image11.jpg");
+          }
+
+          .image-twelve {
+            background-image: url("../assets/images/main/gallery/image12.jpg");
+          }
+        }
+      }
+    }
+
+    //Contact Section
+    .contact {
+
+      //Map
+
+      .map-container {
+        width: 100%;
+        margin: 0 auto;
+
+        iframe {
+          width: 100%;
+          height: 360px;
+          border: 0;
+        }
+      }
+
+
+      .contact-container {
+        width: 100%;
+        margin: 0 auto;
+        @include grid-system(2, 0);
+        background: $contact-background-color;
+
+        .contact-form-btn {
+          cursor: pointer;
+          color: $text-color;
+          border: 1px solid $text-color;
+          background: inherit;
+          padding: 0.5em 1.5em;
+          margin: 0 auto;
+          display: block;
+          font-size: 0.9rem;
+          background-position: 100% 0;
+          background-size: 200% 100%;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            @include contact-hover-btn();
+          }
+        }
+
+        //Form
+
+        .form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .contact-form {
+            width: 100%;
+            padding: 1em;
+
+            .contact-form-text {
+              display: block;
+              width: 100%;
+              border: 2px solid $title-color;
+              margin: 1em 0;
+              background: inherit;
+              padding: 1em 1.5em;
+              color: $title-color;
+              outline: none;
+              transition: 0.5s;
+
+              &:focus {
+                background: $link-color;
+                box-shadow: 0 0 10px 4px #545555;
+              }
+
+            }
+
+            @include placeholder-color($text-color);
+
+            textarea {
+              resize: none;
+              height: 120px;
+            }
+
+
+          }
+        }
+
+        //Contact Info
+
+        .address {
+          text-align: center;
+          padding: 20px;
+          color: $title-color;
+
+          h2 {
+            font-family: "Fredericka the Great", cursive;
+            font-size: 1.8em;
+            margin-top: 30px;
+          }
+
+          p {
+            padding: 10px 0;
+          }
+
+          .address-info {
+            color: $link-color;
+          }
+
+          a {
+            color: $link-color;
+            text-decoration: none;
+          }
+
+          .email-address {
+            color: $link-color;
+          }
+
+          .button-hours {
+            color: $title-color;
+            display: inline-block;
+
+            &:hover {
+              color: $link-color;
+            }
+          }
+        }
+      }
+    }
+
+    //Schedule Section
+
+    .schedule {
+      padding: 0;
+      display: none;
+
+      .hours-container {
+        width: 100%;
+        margin: 0 auto;
+        background-color: $schedule-background-color;
+        color: $link-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-duration: 0.8s;
+        padding: 20px;
+        font-family: 'Open Sans Condensed', sans-serif;
+
+        .days-hours {
+          padding: 10px;
+          font-family: 'PT Sans Narrow', sans-serif;
+          text-align: justify;
+
+          .title-hours {
+            display: inline-block;
+            border-bottom: 1px solid $link-color;
+            font-size: 2rem;
+          }
+
+          span {
+            font-size: 1.2rem;
+            padding: 0.8em 0;
+          }
+        }
+      }
+    }
+
+    //Booking Section - Booking Carsds
+
+    .booking-section {
+      .barbers {
+        margin: 0 auto;
+        padding: 0 0 50px;
+        @include grid-system(4, 0);
+
+        .barber {
+          width: 250px;
+          height: 330px;
+          transform-style: preserve-3d;
+          perspective: 600px;
+          transition: 0.5s;
+          color: $link-color;
+          margin: 0 auto;
+          cursor: pointer;
+
+          &:hover .front {
+            transform: rotateX(-180deg);
+          }
+
+          &:hover .back {
+            transform: rotateX(0deg);
+          }
+
+          .front {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $barbers-background-color;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+
+            .barber-box {
+              width: 100%;
+              height: 100%;
+              @include background-position();
+            }
+
+            .barber-one {
+              background-image: url("../assets/images/main/booking/barbers/barber1.jpg");
+            }
+
+            .barber-two {
+              background-image: url("../assets/images/main/booking/barbers/barber2.jpg");
+            }
+
+            .barber-three {
+              background-image: url("../assets/images/main/booking/barbers/barber3.jpg");
+            }
+
+            .barber-four {
+              background-image: url("../assets/images/main/booking/barbers/barber4.jpg");
+            }
+          }
+
+          .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $barbers-background-color;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+            text-align: center;
+
+            .details {
+              position: absolute;
+              top: 70px;
+              left: 0;
+              width: 100%;
+              box-sizing: border-box;
+              padding: 20px;
+
+              h2 {
+                font-size: 1.4em;
+                font-family: "Lobster", cursive;
+                padding: 0 0 20px;
+
+                span {
+                  font-size: 0.8em;
+                  color: $text-color;
+                }
+              }
+
+              .social-barber {
+                a {
+                  width: 36px;
+                  height: 36px;
+                  display: inline-block;
+                  background-color: $social-background;
+                  border-radius: 50%;
+                  text-decoration: none;
+                  transition: 0.5s;
+                  margin-right: 7px;
+
+                  &:hover {
+                    background-color: $hover-link-color;
+                  }
+
+                  i {
+                    position: relative;
+                    font-size: 15px;
+                    line-height: 36px;
+                  }
+                }
+              }
+
+              p {
+                padding: 20px 0 0;
+
+                a {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Footer
+
+  footer {
+    background-color: $background-color-menu;
+
+    //Social Menu
+
+    .footer-social {
+      padding-top: 30px;
+
+      #social-menu {
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          width: 37px;
+          height: 37px;
+          margin: 0 10px;
+          border-radius: 5px;
+          background-color: $social-background;
+          transition: all 0.35s ease-in;
+
+          &:hover {
+            background-color: $hover-link-color;
+            transform: rotateY(360deg);
+          }
+
+          a {
+            font-size: 22px;
+
+            i {
+              line-height: 40px;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+
+    //Copy Right
+
+    #copyright {
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+      color: $link-color;
+    }
+  }
+
+  //ScrollUp Btn
+
+  #scrollUp {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background-image: url("../assets/images/back-up-btn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+//Animations
+
+@keyframes sliders-animation {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+}
+
+//Responsive Design
+
+//Breakpoint Browser to iPad-Pro
+
+@media screen and (min-width: $breakpoint-iPad-Pro) and (max-width: $breakpoint-browser) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 80vh;
+
+      #navigation {
+        &.fixed-nav {
+          height: 100px;
+
+          .main-menu {
+            line-height: 100px;
+
+            #menu {
+              .logo-middle {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 80vh;
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 6em 0 0;
+
+        h1 {
+          text-align: center;
+          padding-bottom: 2em;
+        }
+      }
+
+      .about {
+        padding-bottom: 2em;
+
+        .about-container {
+
+          .info {
+            padding: 30px 20px;
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+      .booking-section {
+        .barbers {
+          .barber {
+            width: 220px;
+            height: 300px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 14px;
+                      line-height: 35px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Breakpoint iPad-Pro to Middle-Large
+
+@media screen and (min-width: $breakpoint-middle-large) and (max-width: 1023px) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 80vh;
+
+      #navigation {
+        &.fixed-nav {
+          height: 100px;
+
+          .main-menu {
+            line-height: 100px;
+
+            #menu {
+              .logo-middle {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 80vh;
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 6em 0 0;
+
+        h1 {
+          text-align: center;
+          padding-bottom: 2em;
+        }
+      }
+
+      .about {
+        padding-bottom: 2em;
+
+        .about-container {
+          .store-image {
+            width: 400px;
+          }
+
+          .info {
+            padding: 30px 20px;
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+      .booking-section {
+        .barbers {
+          @include grid-system(4, 0);
+
+          .barber {
+            width: 200px;
+            height: 280px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 12px;
+                      line-height: 32px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Breakpoint Middle-Large to iPad
+
+@media screen and (min-width: 769px) and (max-width: 959px) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 80vh;
+
+      #navigation {
+        &.fixed-nav {
+          height: 100px;
+
+          .main-menu {
+            line-height: 100px;
+
+            #menu {
+              .logo-middle {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 80vh;
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 6em 0 0;
+
+        h1 {
+          text-align: center;
+          padding-bottom: 2em;
+        }
+      }
+
+      .about {
+        padding-bottom: 2em;
+
+        .about-container {
+          .store-image {
+            width: 370px;
+          }
+
+          .info {
+            padding: 20px 10px;
+
+            h2 {
+              font-size: 2.2rem;
+
+              span {
+                padding-bottom: 5px;
+                line-height: 30px;
+              }
+            }
+
+            p {
+              font-size: 0.8rem;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+      .booking-section {
+        .barbers {
+          @include grid-system(2, 10px);
+
+          .barber {
+            width: 240px;
+            height: 320px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 15px;
+                      line-height: 36px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Breakpoint iPad to Middle-Small
+
+@media screen and (min-width: $breakpoint-middle-small) and (max-width: $breakpoint-iPad) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 80vh;
+
+      #navigation {
+        height: 70px;
+        background-color: $background-color-menu;
+
+        &.fixed-nav {
+          height: 70px;
+          background-color: $background-color-menu;
+
+          .main-menu {
+            line-height: 50px;
+
+            #menu {
+              li {
+                a {
+                  font-size: 1.1em;
+                }
+              }
+
+              .mobile-booking-button {
+
+                a {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+
+        #toggle-btn {
+          display: inline-block;
+        }
+
+        .logo-name {
+          display: inline-block;
+        }
+
+        .main-menu {
+          line-height: 50px;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          background-color: $background-color-menu;
+          top: 70px;
+          left: -100%;
+          transition: 0.5s;
+          z-index: 9999;
+
+          &.active-open-mobile-menu {
+            left: 0;
+          }
+
+          #menu {
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .logo-mobile {
+              display: block;
+
+              a {
+                .box-mobile-logo {
+                  width: 100px;
+                }
+              }
+            }
+
+            .logo-middle {
+              display: none;
+            }
+
+            .mobile-booking-button {
+              display: block;
+              padding: 1em 0;
+
+              a {
+                padding: 1em 2em;
+                font-size: 0.8rem;
+              }
+            }
+
+            .mobile-social {
+              display: block;
+            }
+
+            .home-main-menu {
+              margin-right: 0;
+            }
+
+            .contact-main-menu {
+              margin-left: 0;
+            }
+
+            li {
+              box-sizing: border-box;
+              width: 100%;
+              text-align: center;
+              border-bottom: 1px solid $hover-link-color;
+
+              a {
+                font-size: 1.1em;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 80vh;
+
+        .slider {
+          top: 70px;
+        }
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 4em 0 0;
+
+        h1 {
+          text-align: center;
+          padding-bottom: 2em;
+        }
+      }
+
+      .about {
+        .about-container {
+          @include grid-system(1, 0);
+
+          .store-image {
+            width: 100%;
+            height: 300px;
+          }
+
+          .info {
+            padding: 20px 10px;
+
+            h2 {
+              font-size: 2.2rem;
+
+              span {
+                padding-bottom: 5px;
+                line-height: 20px;
+              }
+            }
+
+            p {
+              font-size: 1rem;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          grid-auto-rows: minmax(250px, auto);
+          grid-gap: 8px;
+          grid-template-columns: repeat(2, 1fr);
+
+          .one,
+          .two,
+          .four,
+          .six,
+          .seven,
+          .eight,
+          .nine,
+          .ten,
+          .eleven,
+          .twelve {
+            grid-column: auto;
+            grid-row: auto;
+          }
+
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+
+
+      .booking-section {
+        .barbers {
+          @include grid-system(2, 10px);
+
+          .barber {
+            width: 220px;
+            height: 300px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 15px;
+                      line-height: 36px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Breakpoint Middle-Small to Phone
+
+@media screen and (min-width: 415px) and (max-width: 539px) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 70vh;
+
+      #navigation {
+        height: 70px;
+        background-color: $background-color-menu;
+
+        &.fixed-nav {
+          height: 70px;
+          background-color: $background-color-menu;
+
+          .main-menu {
+            line-height: 50px;
+
+            #menu {
+              li {
+                a {
+                  font-size: 1.1em;
+                }
+              }
+
+              .mobile-booking-button {
+
+                a {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+
+        #toggle-btn {
+          display: inline-block;
+        }
+
+        .logo-name {
+          display: inline-block;
+        }
+
+        .main-menu {
+          line-height: 50px;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          background-color: $background-color-menu;
+          top: 70px;
+          left: -100%;
+          transition: 0.5s;
+          z-index: 9999;
+
+          &.active-open-mobile-menu {
+            left: 0;
+          }
+
+          #menu {
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .logo-mobile {
+              display: block;
+
+              a {
+                .box-mobile-logo {
+                  width: 100px;
+                }
+              }
+            }
+
+            .logo-middle {
+              display: none;
+            }
+
+            .mobile-booking-button {
+              display: block;
+              padding: 1em 0;
+
+              a {
+                padding: 1em 2em;
+                font-size: 0.8rem;
+              }
+            }
+
+            .mobile-social {
+              display: block;
+            }
+
+            .home-main-menu {
+              margin-right: 0;
+            }
+
+            .contact-main-menu {
+              margin-left: 0;
+            }
+
+            li {
+              box-sizing: border-box;
+              width: 100%;
+              text-align: center;
+              border-bottom: 1px solid $hover-link-color;
+
+              a {
+                font-size: 1.1em;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 70vh;
+
+        .slider {
+          top: 70px;
+        }
+
+        .booking {
+          .booking-btn-box {
+            a {
+              font-size: 1.1em;
+              padding: 10px 18px;
+
+              &:hover {
+                font-size: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 4em 0 0;
+
+        h1 {
+          text-align: center;
+          padding-bottom: 1.5em;
+          font-size: 25px;
+        }
+      }
+
+      .about {
+        .about-container {
+          @include grid-system(1, 0);
+
+          .store-image {
+            width: 100%;
+            height: 250px;
+          }
+
+          .info {
+            padding: 20px 10px;
+
+            h2 {
+              font-size: 1.8rem;
+
+              span {
+                padding-bottom: 5px;
+                line-height: 2s0px;
+              }
+            }
+
+            p {
+              font-size: 0.8rem;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          grid-gap: 8px;
+          grid-template-columns: repeat(1, 1fr);
+          grid-auto-rows: minmax(220px, auto);
+
+          .one,
+          .two,
+          .four,
+          .six,
+          .seven,
+          .eight,
+          .nine,
+          .ten,
+          .eleven,
+          .twelve {
+            grid-column: auto;
+            grid-row: auto;
+          }
+
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+      .contact {
+        .map-container {
+          iframe {
+            height: 300px;
+
+          }
+        }
+
+        .contact-container {
+          @include grid-system(1, 0);
+
+          .address {
+            padding: 10px 0;
+
+            h2 {
+              margin-top: 0;
+            }
+
+            p {
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .booking-section {
+        .barbers {
+          @include grid-system(1, 10px);
+
+          .barber {
+            width: 270px;
+            height: 350px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 15px;
+                      line-height: 36px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Breakpoint  Phone
+
+@media screen and (max-width: $breakpoint-phone) {
+  body {
+    .wrapper {
+      max-width: 90%;
+    }
+
+    header {
+      height: 70vh;
+
+      #navigation {
+        height: 70px;
+        background-color: $background-color-menu;
+
+        &.fixed-nav {
+          height: 70px;
+          background-color: $background-color-menu;
+
+          .main-menu {
+            line-height: 50px;
+
+            #menu {
+              li {
+                a {
+                  font-size: 1.1em;
+                }
+              }
+
+              .mobile-booking-button {
+
+                a {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+
+        #toggle-btn {
+          display: inline-block;
+        }
+
+        .logo-name {
+          display: inline-block;
+        }
+
+        .main-menu {
+          line-height: 50px;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          background-color: $background-color-menu;
+          top: 70px;
+          left: -100%;
+          transition: 0.5s;
+          z-index: 9999;
+
+          &.active-open-mobile-menu {
+            left: 0;
+          }
+
+          #menu {
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .logo-mobile {
+              display: block;
+
+              a {
+                .box-mobile-logo {
+                  width: 100px;
+                }
+              }
+            }
+
+            .logo-middle {
+              display: none;
+            }
+
+            .mobile-booking-button {
+              display: block;
+              padding: 1em 0;
+
+              a {
+                padding: 1em 2em;
+                font-size: 0.8rem;
+              }
+            }
+
+            .mobile-social {
+              display: block;
+            }
+
+            .home-main-menu {
+              margin-right: 0;
+            }
+
+            .contact-main-menu {
+              margin-left: 0;
+            }
+
+            li {
+              box-sizing: border-box;
+              width: 100%;
+              text-align: center;
+              border-bottom: 1px solid $hover-link-color;
+
+              a {
+                font-size: 1.1em;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+
+      .container-slider {
+        height: 70vh;
+
+        .slider {
+          top: 70px;
+        }
+
+        .booking {
+          .booking-btn-box {
+            a {
+              font-size: 0.9em;
+              padding: 10px 18px;
+
+              &:hover {
+                font-size: 0.8em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    main {
+
+      .about,
+      .gallery,
+      .contact,
+      .booking-section {
+        padding: 4em 0 0;
+
+        h1 {
+          padding-bottom: 1.5em;
+          font-size: 20px;
+        }
+      }
+
+      .about {
+        .about-container {
+          @include grid-system(1, 0);
+
+          .store-image {
+            width: 100%;
+            height: 250px;
+          }
+
+          .info {
+            padding: 20px 10px;
+
+            h2 {
+              font-size: 1.6rem;
+
+              span {
+                padding-bottom: 3px;
+                line-height: 20px;
+              }
+            }
+
+            p {
+              font-size: 0.6rem;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .gallery {
+        .grid {
+          grid-gap: 8px;
+          grid-template-columns: repeat(1, 1fr);
+          grid-auto-rows: minmax(200px, auto);
+
+          .one,
+          .two,
+          .four,
+          .six,
+          .seven,
+          .eight,
+          .nine,
+          .ten,
+          .eleven,
+          .twelve {
+            grid-column: auto;
+            grid-row: auto;
+          }
+
+          a {
+            .image {
+              filter: grayscale(0) contrast(80%);
+            }
+          }
+        }
+      }
+
+      .contact {
+        .map-container {
+          iframe {
+            height: 250px;
+
+          }
+        }
+
+        .contact-container {
+          @include grid-system(1, 0);
+
+          .contact-form-btn {
+            font-size: 0.7rem;
+          }
+
+          .form {
+            .contact-form {
+              padding: 1em;
+
+              .contact-form-text {
+                margin: 0.5em 0;
+                padding: 0.8em 1.2em;
+              }
+            }
+          }
+
+          .address {
+            padding: 10px 0;
+
+            h2 {
+              font-size: 25px;
+              margin-top: 0;
+            }
+
+            p {
+              font-size: 14px;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+
+      .schedule {
+        .hours-container {
+          padding: 10px;
+
+          .days-hours {
+            padding: 10px;
+
+            .title-hours {
+              font-size: 1.8rem;
+            }
+
+            span {
+              font-size: 1rem;
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .booking-section {
+        .barbers {
+          @include grid-system(1, 10px);
+
+          .barber {
+            width: 220px;
+            height: 280px;
+
+            .back {
+              .details {
+                .social-barber {
+                  a {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+
+                    i {
+                      font-size: 12px;
+                      line-height: 30px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    footer {
+      .footer-social {
+        padding-top: 20px;
+
+        #social-menu {
+
+          li {
+            width: 34px;
+            height: 34px;
+            margin: 0 10px;
+
+            a {
+              font-size: 18px;
+
+              i {
+                line-height: 34px;
+              }
+            }
+          }
+        }
+      }
+
+      #copyright {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    #scrollUp {
+      bottom: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

@@ -1,0 +1,1893 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1050px;
+  height: auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+body {
+  font-family: "oxygen", sans-serif;
+  color: #000;
+}
+
+body a,
+body i {
+  color: #fff;
+}
+
+body header {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+body header #navigation {
+  width: 100%;
+  height: 110px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body header #navigation.fixed-nav {
+  height: 80px;
+  background-color: #323e40;
+}
+
+body header #navigation.fixed-nav .main-menu {
+  line-height: 80px;
+}
+
+body header #navigation.fixed-nav .main-menu #menu .logo-middle {
+  width: 70px;
+  height: 70px;
+}
+
+body header #navigation.fixed-nav .main-menu #menu li a {
+  font-size: 0.89rem;
+}
+
+body header #navigation #toggle-btn {
+  display: none;
+  float: right;
+  width: 25px;
+  margin: 20px 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+body header #navigation #toggle-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+body header #navigation #toggle-btn span.active-toggle-btn:nth-child(1) {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotate(42deg) translateY(0.1px);
+          transform: rotate(42deg) translateY(0.1px);
+}
+
+body header #navigation #toggle-btn span.active-toggle-btn:nth-child(2) {
+  opacity: 0;
+}
+
+body header #navigation #toggle-btn span.active-toggle-btn:nth-child(3) {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotate(-42deg) translateY(0.1px);
+          transform: rotate(-42deg) translateY(0.1px);
+}
+
+body header #navigation .logo-name {
+  display: none;
+  float: left;
+  line-height: 70px;
+  position: fixed;
+}
+
+body header #navigation .logo-name.hidden {
+  display: none;
+}
+
+body header #navigation .logo-name a {
+  font-size: 1.8rem;
+  font-family: "Spicy Rice", cursive;
+  text-decoration: none;
+  color: #f2ab27;
+}
+
+body header #navigation .main-menu {
+  width: 100%;
+  line-height: 110px;
+  margin: 0 auto;
+}
+
+body header #navigation .main-menu #menu {
+  list-style-type: none;
+  text-align: center;
+}
+
+body header #navigation .main-menu #menu .logo-mobile {
+  display: none;
+  border-bottom: none;
+}
+
+body header #navigation .main-menu #menu .logo-mobile a .box-mobile-logo {
+  width: 140px;
+  margin: 0 auto;
+}
+
+body header #navigation .main-menu #menu .logo-mobile a .box-mobile-logo img {
+  width: 100%;
+}
+
+body header #navigation .main-menu #menu .logo-middle {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+}
+
+body header #navigation .main-menu #menu .logo-middle a {
+  text-decoration: none;
+}
+
+body header #navigation .main-menu #menu .logo-middle a img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+body header #navigation .main-menu #menu .mobile-booking-button {
+  display: none;
+  border-bottom: none;
+}
+
+body header #navigation .main-menu #menu .mobile-booking-button a {
+  padding: 1em 2em;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border: 1px solid #f2ab27;
+  color: #fff;
+}
+
+body header #navigation .main-menu #menu .mobile-social {
+  display: none;
+  border-bottom: none;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box {
+  width: 100%;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box ul {
+  list-style-type: none;
+  text-align: center;
+  top: 40px;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box ul li {
+  display: inline;
+  padding: 0 20px;
+  border-bottom: none;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box ul li a {
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box ul li a i {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body header #navigation .main-menu #menu .mobile-social .mobile-social-box ul li a i:hover {
+  color: #f2ab27;
+}
+
+body header #navigation .main-menu #menu .home-main-menu {
+  margin-right: 50px;
+}
+
+body header #navigation .main-menu #menu .contact-main-menu {
+  margin-left: 50px;
+}
+
+body header #navigation .main-menu #menu li {
+  display: inline-block;
+}
+
+body header #navigation .main-menu #menu li a {
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: "Fredericka the Great", cursive;
+  text-transform: uppercase;
+}
+
+body header #navigation .main-menu #menu li a:hover {
+  color: #f2ab27;
+  font-weight: 800;
+}
+
+body header #navigation .main-menu #menu li.active a {
+  color: #f2ab27;
+  font-weight: 800;
+}
+
+body header .container-slider {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+}
+
+body header .container-slider .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500%;
+  -webkit-animation: sliders-animation 20s linear infinite;
+          animation: sliders-animation 20s linear infinite;
+}
+
+body header .container-slider .slider .slide {
+  width: 20%;
+  height: 100vh;
+  float: left;
+}
+
+body header .container-slider .slider .slide1 {
+  background-image: url("../assets/images/header/sliders/header1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body header .container-slider .slider .slide2 {
+  background-image: url("../assets/images/header/sliders/header2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body header .container-slider .slider .slide3 {
+  background-image: url("../assets/images/header/sliders/header3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body header .container-slider .slider .slide4 {
+  background-image: url("../assets/images/header/sliders/header4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body header .container-slider .slider .slide5 {
+  background-image: url("../assets/images/header/sliders/header1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body header .container-slider .booking {
+  height: 100%;
+  width: 100%;
+  display: table;
+  position: absolute;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+body header .container-slider .booking .booking-btn-box {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+body header .container-slider .booking .booking-btn-box a {
+  text-decoration: none;
+  font-size: 1.4em;
+  padding: 12px 20px;
+  font-weight: 400;
+  background-color: rgba(255, 127, 80, 0.5);
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+body header .container-slider .booking .booking-btn-box a:hover {
+  background-position: 0 0;
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, orange), to(rgba(255, 255, 0, 0.3)));
+  background-image: linear-gradient(to left, transparent, transparent 50%, orange 50%, rgba(255, 255, 0, 0.3));
+  border: 2px solid #fff;
+  font-size: 1.1em;
+}
+
+body main {
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  width: 100%;
+}
+
+body main .about,
+body main .gallery,
+body main .contact,
+body main .booking-section {
+  padding: 5em 0 0;
+}
+
+body main .about h1,
+body main .gallery h1,
+body main .contact h1,
+body main .booking-section h1 {
+  text-align: center;
+  padding-bottom: 3em;
+  font-size: 30px;
+  color: #323e40;
+  font-family: "Notable", sans-serif;
+}
+
+body main .about h1 span,
+body main .gallery h1 span,
+body main .contact h1 span,
+body main .booking-section h1 span {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f2ab27;
+  line-height: 48px;
+}
+
+body main .about {
+  padding-bottom: 2em;
+}
+
+body main .about .about-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-row: auto;
+  grid-gap: 0;
+}
+
+body main .about .about-container .store-image {
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url("../assets/images/main/about/about-image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body main .about .about-container .info {
+  padding: 35px;
+}
+
+body main .about .about-container .info h2 {
+  text-align: center;
+  font-family: "Lobster", cursive;
+  color: #323e40;
+  font-size: 2.5rem;
+}
+
+body main .about .about-container .info h2 span {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #f2ab27;
+  line-height: 45px;
+}
+
+body main .about .about-container .info p {
+  font-size: 0.8rem;
+  padding: 10px 0;
+  font-family: "Pacifico", cursive;
+}
+
+body main .gallery {
+  background-image: url("../assets/images/main/gallery/gallery-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body main .gallery .grid {
+  width: 100%;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(3, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+  grid-auto-rows: minmax(200px, 1fr);
+}
+
+body main .gallery .grid .one {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+body main .gallery .grid .two {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+body main .gallery .grid .four {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3 / 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+}
+
+body main .gallery .grid .six {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid .seven {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+}
+
+body main .gallery .grid .eight {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid .nine {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid .ten {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid .eleven {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid .twelve {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5 / 7;
+}
+
+body main .gallery .grid a .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(80%) contrast(60%);
+          filter: grayscale(80%) contrast(60%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .gallery .grid a .image:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  transform: 1.02, 1.02;
+  -webkit-transform: 1.02, 1.02;
+  transform: scale(1.02, 1.02);
+}
+
+body main .gallery .grid a .image-one {
+  background-image: url("../assets/images/main/gallery/image1.jpg");
+}
+
+body main .gallery .grid a .image-two {
+  background-image: url("../assets/images/main/gallery/image2.jpg");
+}
+
+body main .gallery .grid a .image-three {
+  background-image: url("../assets/images/main/gallery/image3.jpg");
+}
+
+body main .gallery .grid a .image-four {
+  background-image: url("../assets/images/main/gallery/image4.jpg");
+}
+
+body main .gallery .grid a .image-five {
+  background-image: url("../assets/images/main/gallery/image5.jpg");
+}
+
+body main .gallery .grid a .image-six {
+  background-image: url("../assets/images/main/gallery/image6.jpg");
+}
+
+body main .gallery .grid a .image-seven {
+  background-image: url("../assets/images/main/gallery/image7.jpg");
+}
+
+body main .gallery .grid a .image-eight {
+  background-image: url("../assets/images/main/gallery/image8.jpg");
+}
+
+body main .gallery .grid a .image-nine {
+  background-image: url("../assets/images/main/gallery/image9.jpg");
+}
+
+body main .gallery .grid a .image-ten {
+  background-image: url("../assets/images/main/gallery/image10.jpg");
+}
+
+body main .gallery .grid a .image-eleven {
+  background-image: url("../assets/images/main/gallery/image11.jpg");
+}
+
+body main .gallery .grid a .image-twelve {
+  background-image: url("../assets/images/main/gallery/image12.jpg");
+}
+
+body main .contact .map-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+body main .contact .map-container iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
+body main .contact .contact-container {
+  width: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-row: auto;
+  grid-gap: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#cfcfcf), to(#d3c4a5));
+  background: linear-gradient(to right, #cfcfcf, #d3c4a5);
+}
+
+body main .contact .contact-container .contact-form-btn {
+  cursor: pointer;
+  color: #000;
+  border: 1px solid #000;
+  background: inherit;
+  padding: 0.5em 1.5em;
+  margin: 0 auto;
+  display: block;
+  font-size: 0.9rem;
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+body main .contact .contact-container .contact-form-btn:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #717272), to(#4e5050));
+  background-image: linear-gradient(to left, transparent, transparent 50%, #717272 50%, #4e5050);
+  background-position: 0 0;
+  color: #fff;
+}
+
+body main .contact .contact-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .contact .contact-container .form .contact-form {
+  width: 100%;
+  padding: 1em;
+}
+
+body main .contact .contact-container .form .contact-form .contact-form-text {
+  display: block;
+  width: 100%;
+  border: 2px solid #323e40;
+  margin: 1em 0;
+  background: inherit;
+  padding: 1em 1.5em;
+  color: #323e40;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .contact .contact-container .form .contact-form .contact-form-text:focus {
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px 4px #545555;
+          box-shadow: 0 0 10px 4px #545555;
+}
+
+body main .contact .contact-container .form .contact-form ::-webkit-input-placeholder {
+  color: #000;
+}
+
+body main .contact .contact-container .form .contact-form ::-moz-placeholder {
+  color: #000;
+}
+
+body main .contact .contact-container .form .contact-form :-ms-input-placeholder {
+  color: #000;
+}
+
+body main .contact .contact-container .form .contact-form :-moz-placeholder {
+  color: #000;
+}
+
+body main .contact .contact-container .form .contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+body main .contact .contact-container .address {
+  text-align: center;
+  padding: 20px;
+  color: #323e40;
+}
+
+body main .contact .contact-container .address h2 {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 1.8em;
+  margin-top: 30px;
+}
+
+body main .contact .contact-container .address p {
+  padding: 10px 0;
+}
+
+body main .contact .contact-container .address .address-info {
+  color: #fff;
+}
+
+body main .contact .contact-container .address a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body main .contact .contact-container .address .email-address {
+  color: #fff;
+}
+
+body main .contact .contact-container .address .button-hours {
+  color: #323e40;
+  display: inline-block;
+}
+
+body main .contact .contact-container .address .button-hours:hover {
+  color: #fff;
+}
+
+body main .schedule {
+  padding: 0;
+  display: none;
+}
+
+body main .schedule .hours-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 9, 9, 0.5);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  padding: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body main .schedule .hours-container .days-hours {
+  padding: 10px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: justify;
+}
+
+body main .schedule .hours-container .days-hours .title-hours {
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+  font-size: 2rem;
+}
+
+body main .schedule .hours-container .days-hours span {
+  font-size: 1.2rem;
+  padding: 0.8em 0;
+}
+
+body main .booking-section .barbers {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-row: auto;
+  grid-gap: 0;
+}
+
+body main .booking-section .barbers .barber {
+  width: 250px;
+  height: 330px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+body main .booking-section .barbers .barber:hover .front {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+body main .booking-section .barbers .barber:hover .back {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+body main .booking-section .barbers .barber .front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #708090;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .booking-section .barbers .barber .front .barber-box {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body main .booking-section .barbers .barber .front .barber-one {
+  background-image: url("../assets/images/main/booking/barbers/barber1.jpg");
+}
+
+body main .booking-section .barbers .barber .front .barber-two {
+  background-image: url("../assets/images/main/booking/barbers/barber2.jpg");
+}
+
+body main .booking-section .barbers .barber .front .barber-three {
+  background-image: url("../assets/images/main/booking/barbers/barber3.jpg");
+}
+
+body main .booking-section .barbers .barber .front .barber-four {
+  background-image: url("../assets/images/main/booking/barbers/barber4.jpg");
+}
+
+body main .booking-section .barbers .barber .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #708090;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+
+body main .booking-section .barbers .barber .back .details {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+}
+
+body main .booking-section .barbers .barber .back .details h2 {
+  font-size: 1.4em;
+  font-family: "Lobster", cursive;
+  padding: 0 0 20px;
+}
+
+body main .booking-section .barbers .barber .back .details h2 span {
+  font-size: 0.8em;
+  color: #000;
+}
+
+body main .booking-section .barbers .barber .back .details .social-barber a {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  background-color: #262626;
+  border-radius: 50%;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-right: 7px;
+}
+
+body main .booking-section .barbers .barber .back .details .social-barber a:hover {
+  background-color: #f2ab27;
+}
+
+body main .booking-section .barbers .barber .back .details .social-barber a i {
+  position: relative;
+  font-size: 15px;
+  line-height: 36px;
+}
+
+body main .booking-section .barbers .barber .back .details p {
+  padding: 20px 0 0;
+}
+
+body main .booking-section .barbers .barber .back .details p a {
+  text-decoration: none;
+}
+
+body footer {
+  background-color: #323e40;
+}
+
+body footer .footer-social {
+  padding-top: 30px;
+}
+
+body footer .footer-social #social-menu {
+  margin: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+body footer .footer-social #social-menu li {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  margin: 0 10px;
+  border-radius: 5px;
+  background-color: #262626;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
+}
+
+body footer .footer-social #social-menu li:hover {
+  background-color: #f2ab27;
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+
+body footer .footer-social #social-menu li a {
+  font-size: 22px;
+}
+
+body footer .footer-social #social-menu li a i {
+  line-height: 40px;
+  position: relative;
+}
+
+body footer #copyright {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+body #scrollUp {
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  background-image: url("../assets/images/back-up-btn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@-webkit-keyframes sliders-animation {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+@keyframes sliders-animation {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 80vh;
+  }
+  body header #navigation.fixed-nav {
+    height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .logo-middle {
+    width: 100px;
+    height: 100px;
+  }
+  body header .container-slider {
+    height: 80vh;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 6em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  body main .about {
+    padding-bottom: 2em;
+  }
+  body main .about .about-container .info {
+    padding: 30px 20px;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .booking-section .barbers .barber {
+    width: 220px;
+    height: 300px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 14px;
+    line-height: 35px;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1023px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 80vh;
+  }
+  body header #navigation.fixed-nav {
+    height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .logo-middle {
+    width: 100px;
+    height: 100px;
+  }
+  body header .container-slider {
+    height: 80vh;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 6em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  body main .about {
+    padding-bottom: 2em;
+  }
+  body main .about .about-container .store-image {
+    width: 400px;
+  }
+  body main .about .about-container .info {
+    padding: 30px 20px;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .booking-section .barbers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .booking-section .barbers .barber {
+    width: 200px;
+    height: 280px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 12px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 959px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 80vh;
+  }
+  body header #navigation.fixed-nav {
+    height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 100px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .logo-middle {
+    width: 100px;
+    height: 100px;
+  }
+  body header .container-slider {
+    height: 80vh;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 6em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  body main .about {
+    padding-bottom: 2em;
+  }
+  body main .about .about-container .store-image {
+    width: 370px;
+  }
+  body main .about .about-container .info {
+    padding: 20px 10px;
+  }
+  body main .about .about-container .info h2 {
+    font-size: 2.2rem;
+  }
+  body main .about .about-container .info h2 span {
+    padding-bottom: 5px;
+    line-height: 30px;
+  }
+  body main .about .about-container .info p {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .booking-section .barbers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-row: auto;
+    grid-gap: 10px;
+  }
+  body main .booking-section .barbers .barber {
+    width: 240px;
+    height: 320px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 15px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 80vh;
+  }
+  body header #navigation {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 50px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu li a {
+    font-size: 1.1em;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .mobile-booking-button a {
+    font-size: 0.8rem;
+  }
+  body header #navigation #toggle-btn {
+    display: inline-block;
+  }
+  body header #navigation .logo-name {
+    display: inline-block;
+  }
+  body header #navigation .main-menu {
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #323e40;
+    top: 70px;
+    left: -100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 9999;
+  }
+  body header #navigation .main-menu.active-open-mobile-menu {
+    left: 0;
+  }
+  body header #navigation .main-menu #menu {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body header #navigation .main-menu #menu .logo-mobile {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .logo-mobile a .box-mobile-logo {
+    width: 100px;
+  }
+  body header #navigation .main-menu #menu .logo-middle {
+    display: none;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button {
+    display: block;
+    padding: 1em 0;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button a {
+    padding: 1em 2em;
+    font-size: 0.8rem;
+  }
+  body header #navigation .main-menu #menu .mobile-social {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .home-main-menu {
+    margin-right: 0;
+  }
+  body header #navigation .main-menu #menu .contact-main-menu {
+    margin-left: 0;
+  }
+  body header #navigation .main-menu #menu li {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f2ab27;
+  }
+  body header #navigation .main-menu #menu li a {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+  body header .container-slider {
+    height: 80vh;
+  }
+  body header .container-slider .slider {
+    top: 70px;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 4em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  body main .about .about-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .about .about-container .store-image {
+    width: 100%;
+    height: 300px;
+  }
+  body main .about .about-container .info {
+    padding: 20px 10px;
+  }
+  body main .about .about-container .info h2 {
+    font-size: 2.2rem;
+  }
+  body main .about .about-container .info h2 span {
+    padding-bottom: 5px;
+    line-height: 20px;
+  }
+  body main .about .about-container .info p {
+    font-size: 1rem;
+    padding: 5px 0;
+  }
+  body main .gallery .grid {
+    grid-auto-rows: minmax(250px, auto);
+    grid-gap: 8px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  body main .gallery .grid .one,
+  body main .gallery .grid .two,
+  body main .gallery .grid .four,
+  body main .gallery .grid .six,
+  body main .gallery .grid .seven,
+  body main .gallery .grid .eight,
+  body main .gallery .grid .nine,
+  body main .gallery .grid .ten,
+  body main .gallery .grid .eleven,
+  body main .gallery .grid .twelve {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .booking-section .barbers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-row: auto;
+    grid-gap: 10px;
+  }
+  body main .booking-section .barbers .barber {
+    width: 220px;
+    height: 300px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 15px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (min-width: 415px) and (max-width: 539px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 70vh;
+  }
+  body header #navigation {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 50px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu li a {
+    font-size: 1.1em;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .mobile-booking-button a {
+    font-size: 0.8rem;
+  }
+  body header #navigation #toggle-btn {
+    display: inline-block;
+  }
+  body header #navigation .logo-name {
+    display: inline-block;
+  }
+  body header #navigation .main-menu {
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #323e40;
+    top: 70px;
+    left: -100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 9999;
+  }
+  body header #navigation .main-menu.active-open-mobile-menu {
+    left: 0;
+  }
+  body header #navigation .main-menu #menu {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body header #navigation .main-menu #menu .logo-mobile {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .logo-mobile a .box-mobile-logo {
+    width: 100px;
+  }
+  body header #navigation .main-menu #menu .logo-middle {
+    display: none;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button {
+    display: block;
+    padding: 1em 0;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button a {
+    padding: 1em 2em;
+    font-size: 0.8rem;
+  }
+  body header #navigation .main-menu #menu .mobile-social {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .home-main-menu {
+    margin-right: 0;
+  }
+  body header #navigation .main-menu #menu .contact-main-menu {
+    margin-left: 0;
+  }
+  body header #navigation .main-menu #menu li {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f2ab27;
+  }
+  body header #navigation .main-menu #menu li a {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+  body header .container-slider {
+    height: 70vh;
+  }
+  body header .container-slider .slider {
+    top: 70px;
+  }
+  body header .container-slider .booking .booking-btn-box a {
+    font-size: 1.1em;
+    padding: 10px 18px;
+  }
+  body header .container-slider .booking .booking-btn-box a:hover {
+    font-size: 1em;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 4em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    text-align: center;
+    padding-bottom: 1.5em;
+    font-size: 25px;
+  }
+  body main .about .about-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .about .about-container .store-image {
+    width: 100%;
+    height: 250px;
+  }
+  body main .about .about-container .info {
+    padding: 20px 10px;
+  }
+  body main .about .about-container .info h2 {
+    font-size: 1.8rem;
+  }
+  body main .about .about-container .info h2 span {
+    padding-bottom: 5px;
+    line-height: 2s0px;
+  }
+  body main .about .about-container .info p {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+  body main .gallery .grid {
+    grid-gap: 8px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(220px, auto);
+  }
+  body main .gallery .grid .one,
+  body main .gallery .grid .two,
+  body main .gallery .grid .four,
+  body main .gallery .grid .six,
+  body main .gallery .grid .seven,
+  body main .gallery .grid .eight,
+  body main .gallery .grid .nine,
+  body main .gallery .grid .ten,
+  body main .gallery .grid .eleven,
+  body main .gallery .grid .twelve {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .contact .map-container iframe {
+    height: 300px;
+  }
+  body main .contact .contact-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .contact .contact-container .address {
+    padding: 10px 0;
+  }
+  body main .contact .contact-container .address h2 {
+    margin-top: 0;
+  }
+  body main .contact .contact-container .address p {
+    padding: 5px 0;
+  }
+  body main .booking-section .barbers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 10px;
+  }
+  body main .booking-section .barbers .barber {
+    width: 270px;
+    height: 350px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 15px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  body .wrapper {
+    max-width: 90%;
+  }
+  body header {
+    height: 70vh;
+  }
+  body header #navigation {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav {
+    height: 70px;
+    background-color: #323e40;
+  }
+  body header #navigation.fixed-nav .main-menu {
+    line-height: 50px;
+  }
+  body header #navigation.fixed-nav .main-menu #menu li a {
+    font-size: 1.1em;
+  }
+  body header #navigation.fixed-nav .main-menu #menu .mobile-booking-button a {
+    font-size: 0.8rem;
+  }
+  body header #navigation #toggle-btn {
+    display: inline-block;
+  }
+  body header #navigation .logo-name {
+    display: inline-block;
+  }
+  body header #navigation .main-menu {
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #323e40;
+    top: 70px;
+    left: -100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 9999;
+  }
+  body header #navigation .main-menu.active-open-mobile-menu {
+    left: 0;
+  }
+  body header #navigation .main-menu #menu {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body header #navigation .main-menu #menu .logo-mobile {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .logo-mobile a .box-mobile-logo {
+    width: 100px;
+  }
+  body header #navigation .main-menu #menu .logo-middle {
+    display: none;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button {
+    display: block;
+    padding: 1em 0;
+  }
+  body header #navigation .main-menu #menu .mobile-booking-button a {
+    padding: 1em 2em;
+    font-size: 0.8rem;
+  }
+  body header #navigation .main-menu #menu .mobile-social {
+    display: block;
+  }
+  body header #navigation .main-menu #menu .home-main-menu {
+    margin-right: 0;
+  }
+  body header #navigation .main-menu #menu .contact-main-menu {
+    margin-left: 0;
+  }
+  body header #navigation .main-menu #menu li {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f2ab27;
+  }
+  body header #navigation .main-menu #menu li a {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+  body header .container-slider {
+    height: 70vh;
+  }
+  body header .container-slider .slider {
+    top: 70px;
+  }
+  body header .container-slider .booking .booking-btn-box a {
+    font-size: 0.9em;
+    padding: 10px 18px;
+  }
+  body header .container-slider .booking .booking-btn-box a:hover {
+    font-size: 0.8em;
+  }
+  body main .about,
+  body main .gallery,
+  body main .contact,
+  body main .booking-section {
+    padding: 4em 0 0;
+  }
+  body main .about h1,
+  body main .gallery h1,
+  body main .contact h1,
+  body main .booking-section h1 {
+    padding-bottom: 1.5em;
+    font-size: 20px;
+  }
+  body main .about .about-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .about .about-container .store-image {
+    width: 100%;
+    height: 250px;
+  }
+  body main .about .about-container .info {
+    padding: 20px 10px;
+  }
+  body main .about .about-container .info h2 {
+    font-size: 1.6rem;
+  }
+  body main .about .about-container .info h2 span {
+    padding-bottom: 3px;
+    line-height: 20px;
+  }
+  body main .about .about-container .info p {
+    font-size: 0.6rem;
+    padding: 5px 0;
+  }
+  body main .gallery .grid {
+    grid-gap: 8px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+  }
+  body main .gallery .grid .one,
+  body main .gallery .grid .two,
+  body main .gallery .grid .four,
+  body main .gallery .grid .six,
+  body main .gallery .grid .seven,
+  body main .gallery .grid .eight,
+  body main .gallery .grid .nine,
+  body main .gallery .grid .ten,
+  body main .gallery .grid .eleven,
+  body main .gallery .grid .twelve {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  body main .gallery .grid a .image {
+    -webkit-filter: grayscale(0) contrast(80%);
+            filter: grayscale(0) contrast(80%);
+  }
+  body main .contact .map-container iframe {
+    height: 250px;
+  }
+  body main .contact .contact-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 0;
+  }
+  body main .contact .contact-container .contact-form-btn {
+    font-size: 0.7rem;
+  }
+  body main .contact .contact-container .form .contact-form {
+    padding: 1em;
+  }
+  body main .contact .contact-container .form .contact-form .contact-form-text {
+    margin: 0.5em 0;
+    padding: 0.8em 1.2em;
+  }
+  body main .contact .contact-container .address {
+    padding: 10px 0;
+  }
+  body main .contact .contact-container .address h2 {
+    font-size: 25px;
+    margin-top: 0;
+  }
+  body main .contact .contact-container .address p {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+  body main .schedule .hours-container {
+    padding: 10px;
+  }
+  body main .schedule .hours-container .days-hours {
+    padding: 10px;
+  }
+  body main .schedule .hours-container .days-hours .title-hours {
+    font-size: 1.8rem;
+  }
+  body main .schedule .hours-container .days-hours span {
+    font-size: 1rem;
+    padding: 0;
+  }
+  body main .booking-section .barbers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row: auto;
+    grid-gap: 10px;
+  }
+  body main .booking-section .barbers .barber {
+    width: 220px;
+    height: 280px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+  body main .booking-section .barbers .barber .back .details .social-barber a i {
+    font-size: 12px;
+    line-height: 30px;
+  }
+  body footer .footer-social {
+    padding-top: 20px;
+  }
+  body footer .footer-social #social-menu li {
+    width: 34px;
+    height: 34px;
+    margin: 0 10px;
+  }
+  body footer .footer-social #social-menu li a {
+    font-size: 18px;
+  }
+  body footer .footer-social #social-menu li a i {
+    line-height: 34px;
+  }
+  body footer #copyright {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  body #scrollUp {
+    bottom: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
